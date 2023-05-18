@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-header">
+          <ul class="main-nav-list">
+            <img src="/Img/mboga mtaani-solid2-1.png" alt="" class="logo">
+            <li><a href="/index.html" class="main-nav-link">Home</a></li>
+            <li><a href="/Contact.html" class="main-nav-link"></a></li>
+            <li><a href="/About.html" class="main-nav-link"></a></li>
+            <li><ion-icon name="person-outline" class="icon icon-profile"></ion-icon></li>
+            <li><ion-icon name="settings-outline" class="icon icon-settings"></ion-icon></li>
+            <!-- <li><button class="btn btn-nav"><a href="#" class="main-nav-link link-cta">Sign Up</a> </button></li> -->
+          </nav>
+        </header>
+    <div class="container">
+        <header class="header">
+          <h1>Mama Mboga</h1>
+          <!-- <button id="submit-all">Submit All</button> -->
+        </header>
+        <form id="product-form">
+          <div class="form-group">
+            <div>
+                <form action="/submit-image" method="post" enctype="multipart/form-data">
+                    <label for="image-upload">Select an image:</label>
+                    <input type="file" id="image-upload" name="image-upload">
+                    <input type="submit" value="Upload">
+                  </form>
+              <label for="image">Upload IMAGE:</label>
+              <input type="url" name="image" id="image" required />
+            </div>
+            <div>
+              <label for="name">Product Name:</label>
+              <input type="text" name="name" id="name" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="category">Category:</label>
+              <input type="text" name="category" id="category" required />
+            </div>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                min="1"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="price">Price:</label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                min="0"
+                step="0.01"
+                required
+              />
+            </div>
+            <div>
+              <label for="min-quantity">Minimum Quantity:</label>
+              <input
+                type="number"
+                name="min-quantity"
+                id="min-quantity"
+                min="1"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div>
+              <label for="availability">Availability:</label>
+              <input type="text" name="availability" id="availability" required />
+            </div>
+          </div>
+          <div class="form-submit">
+            <button type="submit">Add product</button>
+          </div>
+        </form>
+      </div>
+      <script>
+        const form = document.getElementById('product-form');
+        const submitAllButton = document.getElementById('submit-all');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Product added successfully');
+            form.reset();
+        });
+        submitAllButton.addEventListener('click', () => {
+            alert('All products submitted successfully');
+        });
+      </script>
+      <table class="blueTable">
+        <thead>
+        <tr>
+        <th>Customer Name</th>
+        <th>Number of Orders</th>
+        <th>Delivery Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Shannon Wafula</td><td>3</td><td>Pending</td></tr>
+        <tr>
+        <td>Caisey Macheusi</td><td>1</td><td>Delivered</td></tr>
+        <tr>
+        <td>Dorothy Omasaja</td><td>2</td><td>In process</td></tr>
+        <tr>
+        <td>Kelvin Kiplimo</td><td>4</td><td>In process</td></tr>
+        </tbody>
+        </tr>
+        </table>
+        <footer class="footer">
+            <div class="grid--footer">
+              <div class="logo-col">
+                <a href="#" class="footer-logo">
+                  <img src="Img/mboga mtaani-solid2-1.png" alt="Mboga Mtaani logo" class="logo-footer"/>
+                </a>
+                <ul class="social-links">
+                  <li>
+                    <a class="footer-link" href="#"
+                      ><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a>
+                  </li>
+                  <li>
+                    <a class="footer-link" href="#"
+                      ><ion-icon class="social-icon" name="logo-facebook"></ion-icon></a>
+                  </li>
+                  <li>
+                    <a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-twitter"></ion-icon></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="address-col">
+                <p class="footer-heading">Contact us</p>
+                <address class="contacts">
+                  <p class="address">
+                    616 Korongo Road.
+                  </p>
+                  <p>
+                    <a href="tel: 0757613566" class="footer-link">+254758613566</a>
+                    <br />
+                    <a href="mailto:hello@omnifood.com" class="footer-link">hello@mbogamtaani.com</a>
+                  </p>
+                </address>
+              </div>
+              <nav class="nav-col">
+                <p class="footer-heading">Account</p>
+                <ul class="footer-nav">
+                  <li><a class="footer-link" href="/signup.html">Create account</a></li>
+                  <li><a class="footer-link" href="/login.html">Sign in</a></li>
+                  <li><a class="footer-link" href="#">iOS app</a></li>
+                  <li><a class="footer-link" href="#">Android app</a></li>
+                </ul>
+              </nav>
+              <nav class="nav-col">
+                <p class="footer-heading">About</p>
+                <ul class="footer-nav">
+                  <li><a class="footer-link" href="/About.html">About MbogaMtaani</a></li>
+                  <li><a class="footer-link" href="/Contact.html">Contact</a></li>
+                  <li><a class="footer-link" href="/"> </a></li> 
+                </ul>
+              </nav>
+            </div>
+            <p class="copyright">
+              Copyright &copy; <span class="year">2023</span> by Mboga Mtaani  Inc.All rights reserved
+            </p>
+          </footer>
+          </body>
+</html>
